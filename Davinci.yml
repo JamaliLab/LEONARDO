@@ -1,0 +1,17 @@
+name: Davinci
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9
+  - numpy
+  - pandas
+  - pytorch
+  - scikit-learn
+  - scipy
+  - jupyter
+  - pip
+  - pip:
+    - pytorch-forecasting
+    - matplotlib
+    - seaborn
