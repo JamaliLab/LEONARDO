@@ -3,9 +3,9 @@ import pandas as pd
 import torch
 import torch.nn as nn
 import matplotlib.pyplot as plt
-from davinci_utils import prepare_dataset, normalize2
+from LEONARDO_utils import prepare_dataset, normalize2
 from torch.utils.data import DataLoader
-import davinci_model
+import LEONARDO_model
 import sys
 # sys.path.append('../Trajectory_simulation/lib')
 import anomalous
@@ -77,7 +77,7 @@ dataloader= DataLoader(trainset, batch_size=batch_size,shuffle=True)
 #Initialize the model
 gpu = True 
 device = torch.device('cuda:3' if gpu and torch.cuda.is_available() else 'cpu')   # Select GPU if available
-model = davinci_model.TransformerVAE(device=device).to(device)
+model = LEONARDO_model.TransformerVAE(device=device).to(device)
 optimizer = torch.optim.Adam(model.parameters(),weight_decay=weight_decay,lr=learning_rate)     # Choose optimizer (Adam)
 
 # Generate validation set
@@ -110,7 +110,7 @@ validation_loader = DataLoader(validationset, batch_size=batch_size)
 
 
 #Train the model
-model.train_davinci(epochs, dataloader, optimizer, device, val_loader=validation_loader)
+model.train_LEONARDO(epochs, dataloader, optimizer, device, val_loader=validation_loader)
 
 #Save the model
 parameters = {
@@ -123,7 +123,7 @@ parameters = {
     'training dataset size': train_dataset.shape[0],
     }
 
-model_name = 'DavinciModel2'
+model_name = 'LEONARDOModel'
 save_name = model_name
 
 model.save_model(parameters, save_name)

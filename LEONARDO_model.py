@@ -6,7 +6,7 @@ from torch.autograd import Variable
 import matplotlib.pyplot as plt
 import random
 import os
-from davinci_utils import kurtosis_dx_torch, skewness_dx_torch, variance_dx_torch, mean_dx_torch, autocorrelation_dx_torch, \
+from LEONARDO_utils import kurtosis_dx_torch, skewness_dx_torch, variance_dx_torch, mean_dx_torch, autocorrelation_dx_torch, \
                   autocorrelation_dx_distribution, variance_acorr, mean_jump_loss, moments_dx_loss
 
 
@@ -29,11 +29,11 @@ if torch.cuda.is_available():
 device = 'cuda:3'
 
 
-class Davinci(nn.Module):
+class LEONARDO(nn.Module):
     def __init__(self, length_trajectory, latent_space):
-        super(Davinci, self).__init__()
+        super(LEONARDO, self).__init__()
 
-        """ A Davinci object is created with the length of the trajectories and the size of the latent space as attributes.
+        """ A LEONARDO object is created with the length of the trajectories and the size of the latent space as attributes.
             This object is used in the TransformerVAE model architecture.
         """
 
@@ -69,8 +69,8 @@ class Davinci(nn.Module):
         self.epochs = 0
     
     
-    def train_davinci(self, epochs, dataloader, optimizer, device, val_loader = None):
-        """ Trains Davinci, storing the training and validation losses at each epoch
+    def train_LEONARDO(self, epochs, dataloader, optimizer, device, val_loader = None):
+        """ Trains LEONARDO, storing the training and validation losses at each epoch
         """
         total_epochs = self.epochs + epochs
 
@@ -530,7 +530,7 @@ class Davinci(nn.Module):
         else: print ('The model is not trained, there are no hyperparameters to show')
 
 
-class SelfAttention(Davinci):
+class SelfAttention(LEONARDO):
     def __init__(self, embed_size, heads):
         super(SelfAttention, self).__init__(length_trajectory=200,latent_space=12)
 
@@ -568,7 +568,7 @@ class SelfAttention(Davinci):
         return out
     
 
-class TransformerBlock(Davinci):
+class TransformerBlock(LEONARDO):
     def __init__(self, embed_size, heads, dropout, forward_expansion):
         super(TransformerBlock, self).__init__(length_trajectory=200,latent_space=12)
 
@@ -595,7 +595,7 @@ class TransformerBlock(Davinci):
         return out
     
 
-class Encoder(Davinci):
+class Encoder(LEONARDO):
     def __init__(
             self,
             embed_size,
@@ -652,7 +652,7 @@ class Encoder(Davinci):
         mem = self.reparameterize(mu, logvar)
         return mem,mu,logvar
     
-class DecoderBlock(Davinci): 
+class DecoderBlock(LEONARDO): 
     def __init__(self, 
                  embed_size, 
                  heads, 
@@ -678,7 +678,7 @@ class DecoderBlock(Davinci):
         return out
 
 
-class Decoder(Davinci):
+class Decoder(LEONARDO):
     def __init__(
         self,
         embed_size,
@@ -721,7 +721,7 @@ class Decoder(Davinci):
         return out
 
 
-class TransformerVAE(Davinci):
+class TransformerVAE(LEONARDO):
     def __init__(
         self,
         embed_size=128,
@@ -767,7 +767,7 @@ class TransformerVAE(Davinci):
 
 
 
-class Bottleneck_Encoding(Davinci):
+class Bottleneck_Encoding(LEONARDO):
     """
     Set of convolutional and dense layers to reduce input to a single
     latent vector
@@ -789,7 +789,7 @@ class Bottleneck_Encoding(Davinci):
         return x
     
 
-class Bottleneck_Decoding(Davinci):
+class Bottleneck_Decoding(LEONARDO):
     """
     Set of convolutional and dense layers to upsample latent vector to output
     that goes into the decoder blocks

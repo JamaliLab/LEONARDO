@@ -142,7 +142,7 @@ def acorr_dx(traj,norm=True):
 
 def moments_dx_loss(train,decoded,moment):
     """ Calculates the mean squared displacement loss between the moments of the distribution of displacement of trajectories
-        for Davinci's loss function
+        for LEONARDO's loss function
     """
     train_loss = moment(train)
     decoded_loss = moment(decoded)
@@ -217,7 +217,7 @@ def variance_acorr(acorrs):
 
 
 def mean_jump_loss(img_dx,decoded_dx):
-    """ Calculates the mean jump loss for Davinci's loss function
+    """ Calculates the mean jump loss for LEONARDO's loss function
     """
     mean_jump = torch.mean(torch.absolute(decoded_dx),axis=0)
     mean_jump_trainset = torch.mean(torch.absolute(img_dx),axis=0)
