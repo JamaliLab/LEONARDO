@@ -1,2 +1,2 @@
 # LEONARDO
-A physics-informed VAE transformer for learning stochastic diffusion of nanoparticles
+Learning Electron microscopy Of NAnoparticles Diffusion via an attention netwOrk
