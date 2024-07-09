@@ -1,4 +1,4 @@
-name: Davinci
+name: LEONARDO
 channels:
   - defaults
   - conda-forge
