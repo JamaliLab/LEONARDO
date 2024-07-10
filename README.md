@@ -1,2 +1,2 @@
 # LEONARDO
-Learning Electron microscopy Of NAnoRod Diffusion via an attention netwOrk
+Learning Electron micrOscopy NAnoRod Diffusion via an attention netwOrk
