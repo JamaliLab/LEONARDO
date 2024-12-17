@@ -6,10 +6,6 @@ import matplotlib.pyplot as plt
 from LEONARDO_utils import prepare_dataset
 from torch.utils.data import DataLoader
 import LEONARDO_model
-import sys
-sys.path.append('../../../Trajectory_simulation/lib')
-import anomalous, goldenrod, models_theory
-from models_theory import models_theory
 import random
 
 gpu_number = 3
