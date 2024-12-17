@@ -68,7 +68,7 @@ parameters = {
     'Normalization type': '0 to 1',
     'Notes': ""
     }
-model_name = 'models_2d/Leonardo'
+model_name = 'Leonardo'
 save_name = model_name
 
 model.save_model(parameters, save_name)
