@@ -5,6 +5,8 @@ Learning Electron micrOscopy NAnoRod Diffusion via an attention netwOrk
 
 Zain Shabeeb, Naisargi Goyal, Pagnaa Attah Nantogmah, [Vida Jamali](https://vidajamali.github.io)
 
+## LEONARDO Description 
+LEONARDO is a generative model with an attention-based transformer variational autoencoder architecture and a physics-informed loss function.
 
 ### Installation
 
@@ -13,7 +15,9 @@ Zain Shabeeb, Naisargi Goyal, Pagnaa Attah Nantogmah, [Vida Jamali](https://vida
 - conda activate LEONARDO
 
   Download the LEONARDO model from Huggingface: https://huggingface.co/JamaliLab/LEONARDO
+  
   Download the dataset from Huggingface: https://huggingface.co/datasets/JamaliLab/LEONDARDO
+  
   Use the Jupyternotebook to generate new LPTEM trajectories using the pre-trained model or train a new model.
 
 ###  Abstract
