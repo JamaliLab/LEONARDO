@@ -18,7 +18,7 @@ Download the LEONARDO model from Huggingface: [https://huggingface.co/JamaliLab/
   
 Download the dataset from Huggingface: [https://huggingface.co/datasets/JamaliLab/LEONDARDO](https://huggingface.co/datasets/JamaliLab/LEONDARDO)
   
-Use the Jupyternotebook to generate new LPTEM trajectories using the pre-trained model or train a new model.
+Use the [LEONARDO_introductory_notebook.ipynb](https://github.com/JamaliLab/LEONARDO/blob/main/LEONARDO_introductory_notebook.ipynb) to generate new LPTEM trajectories using the pre-trained model or train a new model.
 
 For using MoNet++ model checkout [https://github.com/JamaliLab/MoNet](https://github.com/JamaliLab/MoNet).
 
