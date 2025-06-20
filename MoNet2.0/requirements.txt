@@ -1,0 +1,6 @@
+numpy==1.23.5
+matplotlib==3.8.4
+seaborn==0.13.2
+tensorflow==2.11.0
+scikit-learn==1.6.1
+stochastic==0.7.0
