@@ -1,4 +1,4 @@
-# LEONARDO
+# LEONARDO ([https://doi.org/10.1038/s41467-025-61632-1](https://doi.org/10.1038/s41467-025-61632-1))
 Learning Electron micrOscopy NAnoRod Diffusion via an attention netwOrk
 
 ## Authors
@@ -27,3 +27,17 @@ The motion of nanoparticles in complex environments can provide us with a detail
 
 ### Acknowledgements
 This project is funded by the National Science Foundation Division of Chemical, Bioengineering, Environmental, and Transport Systems under award 2338466, the American Chemical Society Petroleum Research Fund under award 67239-DNI5, and the Georgia Tech Institute for Matter and Systems, Exponential Electronics seed grant.
+### Citation
+If you are using this code, please reference our paper:
+```
+  @article{shabeeb2025learning,
+  title={Learning the diffusion of nanoparticles in liquid phase TEM via physics-informed generative AI},
+  author={Shabeeb, Zain and Goyal, Naisargi and Attah Nantogmah, Pagnaa and Jamali, Vida},
+  journal={Nature Communications},
+  volume={16},
+  number={1},
+  pages={6298},
+  year={2025},
+  publisher={Nature Publishing Group UK London}
+}
+```    
